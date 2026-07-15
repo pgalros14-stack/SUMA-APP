@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SumaApp</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .card {
+      background: white;
+      width: 100%;
+      max-width: 420px;
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 36px;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.5;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      font-size: 18px;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border: none;
+      border-radius: 12px;
+      background: #0032a0;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #001f66;
+    }
+
+    .resultado {
+      margin-top: 24px;
+      padding: 18px;
+      border-radius: 12px;
+      background: #f0f3ff;
+      color: #0032a0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>SumaApp</h1>
+    <p>Introduce dos números y la app calculará la suma.</p>
+
+    <input id="numero1" type="number" placeholder="Primer número" />
+    <input id="numero2" type="number" placeholder="Segundo número" />
+
+    <button onclick="sumar()">Sumar</button>
+
+    <div class="resultado" id="resultado">Resultado: —</div>
+  </div>
+
+  <script>
+    function sumar() {
+      const numero1 = Number(document.getElementById("numero1").value);
+      const numero2 = Number(document.getElementById("numero2").value);
+      const resultado = numero1 + numero2;
+
+      document.getElementById("resultado").textContent = "Resultado: " + resultado;
+    }
+  </script>
+</body>
+</html>
